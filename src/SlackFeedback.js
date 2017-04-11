@@ -1,4 +1,6 @@
 import React, { Component, PropTypes } from 'react';
+import reCAPTCHA from 'react-recaptcha';
+import Helmet from 'react-helmet';
 
 // classnames
 import classNames from 'classnames';
@@ -317,10 +319,17 @@ class SlackFeedback extends Component {
 
     return (
       <div ref="SlackFeedback" id="SlackFeedback" class={classNames('SlackFeedback', { active })}>
+        <Helmet
+          script={[
+            { src: 'https://www.google.com/recaptcha/api.js', type: 'text/javascript', async: true, defer: true }
+          ]}
+        />
+
         <div
           ref="container"
           style={this.props.contentStyles}
-          class="SlackFeedback--container fadeInUp">
+          class="SlackFeedback--container fadeInUp"
+        >
           <div class="SlackFeedback--header">
             <SlackIcon /> Send Feedback to Slack
             <div class="close" onClick={this.close}>close</div>
@@ -328,8 +337,11 @@ class SlackFeedback extends Component {
 
           <div class="SlackFeedback--content">
 
-            <label class="SlackFeedback--label">Channel</label>
-            <input class="SlackFeedback--input" value={this.props.channel} disabled />
+            <label class="SlackFeedback--label">Name</label>
+            <input class="SlackFeedback--input" ref="name" />
+
+            <label class="SlackFeedback--label">Email</label>
+            <input class="SlackFeedback--input" ref="email" />
 
             <label class="SlackFeedback--label">Feedback Type</label>
             <ul class="SlackFeedback--tabs">
@@ -345,15 +357,24 @@ class SlackFeedback extends Component {
             </ul>
 
             <label class="SlackFeedback--label">Your Message</label>
-            <textarea ref="message" class="SlackFeedback--textarea" placeholder="Message..." />
+            <textarea
+              ref="message"
+              class="SlackFeedback--textarea"
+              placeholder="Message..."
+              rows={6}
+            />
 
             {/* Only render the image upload if there's callback available  */}
             {this.props.onImageUpload ? this.renderImageUpload() : null}
 
-            <div style={{ padding: '0.5em 0 1em' }}>
-              <input id="sendURL" class="SlackFeedback--checkbox" type="checkbox" checked={sendURL} onChange={this.toggleSendURL} />
-              <label for="sendURL" class="SlackFeedback--checkbox-label">Send URL with Feedback</label>
-            </div>
+            <div
+              ref={ref => this.grecaptcha = ref}
+              class="g-recaptcha"
+              data-sitekey="6LfHbhwUAAAAALhe7fMSRu_G1U0tmw8MvLKub4PZ"
+              style={{
+                width: '100%',
+              }}
+            />
 
             <button
               class={classNames('submit', { sent, error, disabled: sending || uploadingImage })}
