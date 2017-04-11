@@ -1,9 +1,9 @@
 {
-  "name": "react-slack-feedback",
-  "version": "1.0.2",
+  "name": "astrocoders-react-slack-feedback",
+  "version": "1.0.0",
   "description": "React component for gathering user feedback to send to slack.",
   "main": "lib/SlackFeedback.js",
-  "author": "Mark Murray <mark.murray.ie@gmail.com> (https://github.com/markmur)",
+  "author": "Yuri Jean Fabris <yuri.fabris@gmail.com> (https://github.com/yurijean)",
   "license": "MIT",
   "scripts": {
     "start": "nf start --wrap",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/markmur/react-slack-feedback.git"
+    "url": "https://github.com/Astrocoders/react-slack-feedback.git"
   },
   "keywords": [
     "react",
@@ -20,9 +20,8 @@
     "feedback"
   ],
   "bugs": {
-    "url": "https://github.com/markmur/react-slack-feedback/issues"
+    "url": "https://github.com/Astrocoders/react-slack-feedback/issues"
   },
-  "homepage": "https://github.com/markmur/react-slack-feedback",
   "devDependencies": {
     "autoprefixer": "^6.4.0",
     "autoprefixer-loader": "^3.2.0",
