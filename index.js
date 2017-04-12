@@ -6,7 +6,7 @@ import classNames from 'classnames';
 
 // Images
 import SlackIcon from './SlackIcon';
-import './SlackFeedback.scss';
+import './index.scss';
 
 const propTypes = {
   channel: PropTypes.string.isRequired,
