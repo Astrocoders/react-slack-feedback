@@ -21,7 +21,7 @@ This component will produce the JSON object to send to Slack but it won't send
 the request for you.
 
 ```js
-import SlackFeedback from 'react-slack-feedback';
+import SlackFeedback from '@astrocoders/react-slack-feedback';
 
 <SlackFeedback
   // required

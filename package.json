@@ -1,8 +1,8 @@
 {
   "name": "@astrocoders/react-slack-feedback",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React component for gathering user feedback to send to slack.",
-  "main": "lib/SlackFeedback.js",
+  "main": "src/SlackFeedback.js",
   "author": "Yuri Jean Fabris <yuri.fabris@gmail.com> (https://github.com/yurijean)",
   "license": "MIT",
   "scripts": {
