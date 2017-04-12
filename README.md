@@ -8,7 +8,7 @@ React component for gathering user feedback to send to slack.
 Install via NPM:
 
 ```
-npm install react-slack-feedback --save
+npm install @astrocoders/react-slack-feedback --save
 ```
 
 To use the component, import it and render in your app's global component,
